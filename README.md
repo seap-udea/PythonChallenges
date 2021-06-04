@@ -69,13 +69,121 @@ $ git config --global alias.lg "log --oneline --decorate --all --graph"
 $ git config --global alias.s "status -sb"
 ```
 
-# 2. Guía de instalación/Acciones básicas
-
+# 2. Guía de instalación del proyecto local
 
 A continuación se presentan los pasos para clonar el proyecto:
 
-1. **Crear un fork del proyecto principal:**  Dar click en la opción fork como se muestra a continuación
+-  **Crear un fork del proyecto principal:**  Dar click en la opción fork como se muestra a continuación
 
-![](/img/CREATE_FORK.png)
+![](/images/CREATE_FORK.png)
 
+Como resultado, se crea una copia del repositorio asociado a la cuenta de la persona que va participar. La URL tiene una estructura parecida a esto: 
 
+https://github.com/mi_usuario/PythonChallenges
+
+-  **Clonar proyecto:**  Ejecutar el siguiente comando apuntando al fork creado en el paso anterior:
+
+```bash
+$ git clone https://github.com/mi_usuario/PythonChallenges
+```
+- **Establecer el repositorio principal como upstream:**
+
+```bash
+$ git add upstream https://github.com/seap-udea/PythonChallenges
+```
+
+# 3. Estructura del proyecto
+
+* **PC_X**: Directorio para cada challenge.
+* **id_nombre_x**: Directorio en la cual cada participante presenta su solución **(Es mandatorio evitar modificar las carpetas de otros participantes)**
+
+.
+└── **PC1\**
+│   └── id_nombre_1\ (user_1 folder)
+│   └── id_nombre_2\ (user_2 folder)
+│   └── id_nombre_3\ (user_3 folder)
+│   └── id_nombre_n\ (user_n folder)
+└──  **PC2\**
+│   └── id_nombre_1\ (user_1 folder)
+│   └── id_nombre_2\ (user_2 folder)
+│   └── id_nombre_3\ (user_3 folder)
+│   └── id_nombre_n\ (user_n folder)
+└──  **PCN\**
+│   └── id_nombre_1\ (user_1 folder)
+│   └── id_nombre_2\ (user_2 folder)
+│   └── id_nombre_3\ (user_3 folder)
+│   └── id_nombre_n\ (user_n folder)
+└── ** img/** (Assets file)
+└── README.md (The main readme)
+
+# 3. Estrategia para el control de versiones
+
+Para facilitar el trabajo colaborativo entre las personas que hacen parte de la iniciativa, se realiza el siguiente esquema de trabajo con el objetivo de evitar conflictos permitir que cada persona pueda trabajar de manera individual en cada challenge respectivo.
+
+## Estrategia para descargar cambios en la rama principal
+
+Cada cierto tiempo, los colaboradores principales crean un nuevo directorio llamado **PC_(N+1)/**  que corresponde con el nuevo challenge a realizar. 
+
+Los participantes deben actualizar su fork a la ultima versión de la rama principal del proyecto para descargar la información del nuevo challenge y agregar su carpeta. Para ello se realizan las siguientes acciones:
+
+```bash
+$ git fetch upstream
+$ git merge upstream/main
+```
+Ejecutar los comandos anteriores sincronizará el fork del participante con los ultimos cambios presentes en la linea principal de desarrollo.  Una vez sincronizado, cada participante procederá a crear una carpeta siguiendo la estructura del proyecto. 
+
+**Ejemplo**
+
+		El colaborador A crea el challenge PC3/
+		El participante 1 sincroniza su fork
+		El participante 1 ingresa a la carpeta PC3/ y crea el directorio id_nombre_1/
+
+## Estrategia para subir cambios
+
+Cada participante tiene la capacidad de realizar cambios en su fork. Por limitaciones de accesos y permisos, se recomienda y solicita a cada participante hacer cambios **únicamente** en su propio directorio para evitar conflictos con el trabajo de otras personas.
+
+Tomando en cuenta lo anterior, se presentan las siguientes acciones básicas que se deben tener en cuenta cuando se van a subir cambios al repositorio local, al fork, y posteriormente a la rama principal.
+
+- #### Actualizar cambios:
+
+Cuando un participante quiere subir sus cambios para que sean almacenados en el repositorio local se pueden realizar las siguientes acciones.
+
+** git add: ** Permite agregar los cambios del usuario al estado de staged, lo cual significa que están listos para subirse al repositorio local. Ejemplos:
+
+```bash
+$ git add . (Agrega todos los cambios al stage)
+$ git add archivo1 (Agrega el archivo seleccionado al stage)
+$ git add archivo1 archivo2 archivoN (Agrega los archivos seleccionados al stage)
+```
+
+** git commit: ** Guarda los cambios realizados en el repositorio local de cada participante. Ejemplo:
+
+```bash
+$ git commit -am "se agrega archivo" 
+```
+
+** git push: ** Actualiza los cambios en el repositorio remoto (fork configurado):
+
+```bash
+$ git push 
+```
+
+- #### Subir cambios al proyecto principal.
+
+Para evitar conflictos entre los participantes, cada cambio que se vaya a subir al repositorio central debe ser gestionado mediante un pull request que será evaluado por un colaborador para garantizar que no se hicieron cambios que puedan afectar a los demás.
+
+Para realizar un pull request se deben realizar las siguientes acciones:
+
+* Ir a la url del fork configurado
+* Seleccionar la opción pull requests
+
+![](/images/CREATE_PULL_REQUEST.png)
+
+*  Seleccionar la opción **new pull request**
+
+![](/images/PULL_REQUEST.png)
+
+* Verificar que no existen conflictos con la rama principal
+* Seleccionar la opción **create pull request**
+
+Después de realizar esta acción, un colaborador revisará el pull request y realizará su aprobación o rechazo. En caso de aceptar el pull request, se hará merge con la rama principal, en caso contrario se debe revisar la causa del rechazo
