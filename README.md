@@ -97,24 +97,8 @@ $ git add upstream https://github.com/seap-udea/PythonChallenges
 * **PC_X**: Directorio para cada challenge.
 * **id_nombre_x**: Directorio en la cual cada participante presenta su solución **(Es mandatorio evitar modificar las carpetas de otros participantes)**
 
-.
-└── **PC1\**
-│   └── id_nombre_1\ (user_1 folder)
-│   └── id_nombre_2\ (user_2 folder)
-│   └── id_nombre_3\ (user_3 folder)
-│   └── id_nombre_n\ (user_n folder)
-└──  **PC2\**
-│   └── id_nombre_1\ (user_1 folder)
-│   └── id_nombre_2\ (user_2 folder)
-│   └── id_nombre_3\ (user_3 folder)
-│   └── id_nombre_n\ (user_n folder)
-└──  **PCN\**
-│   └── id_nombre_1\ (user_1 folder)
-│   └── id_nombre_2\ (user_2 folder)
-│   └── id_nombre_3\ (user_3 folder)
-│   └── id_nombre_n\ (user_n folder)
-└── ** img/** (Assets file)
-└── README.md (The main readme)
+![](/img/ESTRUCTURA_PROYECTO.png)
+
 
 # 3. Estrategia para el control de versiones
 
@@ -148,7 +132,7 @@ Tomando en cuenta lo anterior, se presentan las siguientes acciones básicas que
 
 Cuando un participante quiere subir sus cambios para que sean almacenados en el repositorio local se pueden realizar las siguientes acciones.
 
-** git add: ** Permite agregar los cambios del usuario al estado de staged, lo cual significa que están listos para subirse al repositorio local. Ejemplos:
+**git add:** Permite agregar los cambios del usuario al estado de staged, lo cual significa que están listos para subirse al repositorio local. Ejemplos:
 
 ```bash
 $ git add . (Agrega todos los cambios al stage)
@@ -156,13 +140,13 @@ $ git add archivo1 (Agrega el archivo seleccionado al stage)
 $ git add archivo1 archivo2 archivoN (Agrega los archivos seleccionados al stage)
 ```
 
-** git commit: ** Guarda los cambios realizados en el repositorio local de cada participante. Ejemplo:
+**git commit:** Guarda los cambios realizados en el repositorio local de cada participante. Ejemplo:
 
 ```bash
 $ git commit -am "se agrega archivo" 
 ```
 
-** git push: ** Actualiza los cambios en el repositorio remoto (fork configurado):
+**git push:** Actualiza los cambios en el repositorio remoto (fork configurado):
 
 ```bash
 $ git push 
