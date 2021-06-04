@@ -81,7 +81,7 @@ A continuación se presentan los pasos para clonar el proyecto:
 
 -  **Crear un fork del proyecto principal:**  Dar click en la opción fork como se muestra a continuación
 
-![](/images/CREATE_FORK.png)
+![](/img/CREATE_FORK.png)
 
 Como resultado, se crea una copia del repositorio asociado a la cuenta de la persona que va participar. La URL tiene una estructura parecida a esto: 
 
