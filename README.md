@@ -177,11 +177,11 @@ Para realizar un pull request se deben realizar las siguientes acciones:
 * Ir a la url del fork configurado
 * Seleccionar la opción pull requests
 
-![](/images/CREATE_PULL_REQUEST.png)
+![](/img/CREATE_PULL_REQUEST.png)
 
 *  Seleccionar la opción **new pull request**
 
-![](/images/PULL_REQUEST.png)
+![](/img/PULL_REQUEST.png)
 
 * Verificar que no existen conflictos con la rama principal
 * Seleccionar la opción **create pull request**
