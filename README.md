@@ -2,7 +2,7 @@
 
 Este repositorio contiene los proyectos realizados por los colaboradores autorizados que hacen parte de la iniciativa **Python Challenges**, que tiene por objetivo ofrecer un espacio en el cual estudiantes, profesionales e interesados en programación científica y ciencia de datos puedan aprender y recibir realimentación de manera colaborativa.
 
-Se recomienda que cualquier persona interesada en colaborar tenga conocimientos básicos los siguientes aspectos. No obstante, esto se considera una limitante; adicionalmente, se adjunta documentación de interés para quien desee conocer aspectos generales de las herramientas y tecnologías mencionadas a continuación:
+Se recomienda que cualquier persona interesada en colaborar tenga conocimientos básicos en las siguientes herramientas y tecnologías. No obstante, esto no se considera una limitante.
 
 - Python v3.7 o superior
 	- [Guía para principiantes](https://wiki.python.org/moin/BeginnersGuide)
@@ -17,18 +17,20 @@ A continuación, se presentan los elementos básicos a tener en cuenta para cola
 
 # 1. Instalación de git
 
-Git es una herramienta para facilitar el desarrollo de software a través de control de versiones, permitendo a grupos o células de trabajo trabajar de manera colaborativa.  No se debe confundir Git con GitHub, Github es una plataforma que permite mantener repositorios en la nube utilizando las características ofrecidas por git.
+Git es una herramienta para facilitar el desarrollo de software a través de control de versiones, permitendo a grupos o células de trabajo trabajar de manera colaborativa.  No se debe confundir git con GitHub, Github es una plataforma que permite mantener repositorios en la nube utilizando las características ofrecidas por git.
 
 ## Windows
 Instalar y ejecutar el archivo disponible en el siguiente enlace: [git for Windows](https://git-scm.com/download/win "git for Windows")
 
 ## Linux/Unix
 En sistemas operativos basados en Fedora ejecutar el siguiente comando en el terminal:
+
 ```bash
 $ sudo dnf install git-all
 ```
 
 En sistemas basados en Debian ejecutar el siguiente comando en el terminal:
+
 ```bash
 $ sudo apt install git-all
 ```
@@ -44,25 +46,29 @@ Después de instalar brew, ejecutar el siguiente comando:
 ```bash
 $ brew install git
 ```
+
 # 2. Antes de comenzar con el proyecto
 
-Una vez instalado git, ejecutar los siguientes comandos por terminal para activar características útiles. El primer comando evita errores presentes por formato que puede ocurrir en algunos editores; El segundo comando permite descargar cambios específicos de la rama **main**:
+Una vez instalado git, ejecutar el siguiente comando para evitar que ocurran errores y advertencias relacionadas a formato.
 
 ```bash
 $ git config core.autocrlf true
-$ git config core.sparseCheckout true
 ```
 
-Si es la primera vez que se utiliza git, es necesario configurar el usuario para el acceso al repositorio. Para ello, se deben ejecutar los siguientes comandos:
+En caso de usar git por primera vez, se debe configurar el usuario para acceder a los repositorios de interés. Para ello, se deben ejecutar los siguientes comandos:
+
 ```bash
 $ git --global user.name = "mi_usuario"
 $ git --global user.email = "mi_correo@host.xxx.xx"
 ```
+
 La cuenta se puede verificar aplicando el siguiente comando:
+
 ```bash
 $ git config --global -e
 ```
-Adicionalmente, se recomienda agregar los siguientes alias para facilitar acciones que se realizan con frecuencia. Los alias descritos a continuación permiten resumir las acciones para consultar historico de commits y la revisión de status:
+
+Adicionalmente, se recomienda agregar los siguientes alias para facilitar acciones que se realizan con frecuencia. Los alias descritos a continuación permiten resumir la visualización de logs y el estado de los cambios en el repositorio local.
 
 ```bash
 $ git config --global alias.lg "log --oneline --decorate --all --graph"
@@ -86,6 +92,7 @@ https://github.com/mi_usuario/PythonChallenges
 ```bash
 $ git clone https://github.com/mi_usuario/PythonChallenges
 ```
+
 - **Establecer el repositorio principal como upstream:**
 
 ```bash
@@ -95,29 +102,29 @@ $ git add upstream https://github.com/seap-udea/PythonChallenges
 # 3. Estructura del proyecto
 
 * **PC_X**: Directorio para cada challenge.
-* **id_nombre_x**: Directorio en la cual cada participante presenta su solución **(Es mandatorio evitar modificar las carpetas de otros participantes)**
+* **id_nombre_x**: Directorio en el cual cada participante realiza cambios **(Es mandatorio evitar modificar las carpetas de otros participantes)**
 
 ![](/img/ESTRUCTURA_PROYECTO.png)
 
 
 # 3. Estrategia para el control de versiones
 
-Para facilitar el trabajo colaborativo entre las personas que hacen parte de la iniciativa, se realiza el siguiente esquema de trabajo con el objetivo de evitar conflictos permitir que cada persona pueda trabajar de manera individual en cada challenge respectivo.
+Para facilitar el trabajo colaborativo entre las personas que hacen parte de la iniciativa, se plantea el siguiente esquema de trabajo con el objetivo de evitar conflictos entre los participantes.
 
 ## Estrategia para descargar cambios en la rama principal
 
-Cada cierto tiempo, los colaboradores principales crean un nuevo directorio llamado **PC_(N+1)/**  que corresponde con el nuevo challenge a realizar. 
+Cada cierto tiempo, los colaboradores crean un nuevo directorio llamado **PC_(N+1)/**  que corresponde con el nuevo challenge a realizar. 
 
-Los participantes deben actualizar su fork a la ultima versión de la rama principal del proyecto para descargar la información del nuevo challenge y agregar su carpeta. Para ello se realizan las siguientes acciones:
+Los participantes deben actualizar su fork a la ultima versión de la rama principal del proyecto. Para ello se realizan las siguientes acciones:
 
 ```bash
 $ git fetch upstream
 $ git merge upstream/main
 ```
+
 Ejecutar los comandos anteriores sincronizará el fork del participante con los ultimos cambios presentes en la linea principal de desarrollo.  Una vez sincronizado, cada participante procederá a crear una carpeta siguiendo la estructura del proyecto. 
 
 **Ejemplo**
-
 		El colaborador A crea el challenge PC3/
 		El participante 1 sincroniza su fork
 		El participante 1 ingresa a la carpeta PC3/ y crea el directorio id_nombre_1/
@@ -129,8 +136,6 @@ Cada participante tiene la capacidad de realizar cambios en su fork. Por limitac
 Tomando en cuenta lo anterior, se presentan las siguientes acciones básicas que se deben tener en cuenta cuando se van a subir cambios al repositorio local, al fork, y posteriormente a la rama principal.
 
 - #### Actualizar cambios:
-
-Cuando un participante quiere subir sus cambios para que sean almacenados en el repositorio local se pueden realizar las siguientes acciones.
 
 **git add:** Permite agregar los cambios del usuario al estado de staged, lo cual significa que están listos para subirse al repositorio local. Ejemplos:
 
