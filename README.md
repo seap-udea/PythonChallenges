@@ -15,7 +15,7 @@ Se recomienda que cualquier persona interesada en colaborar tenga conocimientos 
 
 A continuación, se presentan los elementos básicos a tener en cuenta para colaborar en el proyecto:
 
-#1. Instalación de git
+# 1. Instalación de git
 
 #### Windows
 Instalar y ejecutar el archivo disponible en el siguiente enlace: [git for Windows](https://git-scm.com/download/win "git for Windows")
@@ -44,7 +44,7 @@ Después de instalar brew, ejecutar el siguiente comando:
 $ brew install git
 ```
 
-#2. Guía de instalación/Acciones básicas
+# 2. Guía de instalación/Acciones básicas
 
 Git es una herramienta para facilitar el desarrollo de software a través de control de versiones, permitendo a grupos o células de trabajo trabajar de manera colaborativa.  No se debe confundir Git con GitHub, Github es una plataforma que permite mantener repositorios en la nube utilizando las características ofrecidas por git.
 
