@@ -96,7 +96,7 @@ $ git clone https://github.com/mi_usuario/PythonChallenges
 - **Establecer el repositorio principal como upstream:**
 
 ```bash
-$ git add upstream https://github.com/seap-udea/PythonChallenges
+$ git remote add upstream https://github.com/seap-udea/PythonChallenges
 ```
 
 # 3. Estructura del proyecto
